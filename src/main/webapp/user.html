@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Page - Hardware Shop</title>
+  <link rel="stylesheet" href="user.css" />
+</head>
+<body>
+  <header>
+    <h1>Hardware Shop - User Panel</h1>
+    <nav>
+      <ul>
+        <li onclick="showTab('dashboard')">Dashboard</li>
+        <li onclick="showTab('products')">View Products</li>
+        <li onclick="showTab('billing')">Create Bill</li>
+        <li onclick="showTab('history')">Order History</li>
+        <li onclick="showTab('profile')">Profile</li>
+        <li onclick="logout()">Logout</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dashboard" class="tab active">
+      <h2>Welcome, User!</h2>
+      <p>Today is <span id="todayDate"></span></p>
+    </section>
+
+    <section id="products" class="tab">
+      <h2>Available Products</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price (₹)</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Hammer</td><td>150</td><td>10</td></tr>
+          <tr><td>Screwdriver</td><td>80</td><td>25</td></tr>
+          <tr><td>Drill</td><td>1200</td><td>5</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="billing" class="tab">
+      <h2>Create Bill</h2>
+      <table class="bill-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="billBody">
+          <tr>
+            <td><input type="text" class="desc" placeholder="Item name" /></td>
+            <td><input type="number" class="qty" placeholder="0" /></td>
+            <td><input type="number" class="price" placeholder="0.00" /></td>
+            <td><input type="number" class="amount" placeholder="0.00" readonly /></td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="printBill()">Print Bill</button>
+    </section>
+
+    <section id="history" class="tab">
+      <h2>Order History</h2>
+      <p>No past orders available yet.</p>
+    </section>
+
+    <section id="profile" class="tab">
+      <h2>My Profile</h2>
+      <p>Name: John Doe</p>
+      <p>Username: johndoe123</p>
+    </section>
+  </main>
+
+  <script src="user.js"></script>
+</body>
+</html>
